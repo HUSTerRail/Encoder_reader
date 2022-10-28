@@ -20,6 +20,8 @@
 .\build\pipe.o: ..\..\..\..\components\drivers\include\ipc/pipe.h
 .\build\pipe.o: ..\..\..\..\components\drivers\include\ipc/poll.h
 .\build\pipe.o: ..\..\..\..\components\drivers\include\ipc/ringblk_buf.h
+.\build\pipe.o: ..\..\..\..\components\drivers\include\drivers/spi.h
+.\build\pipe.o: F:\keil_mdk530\ARM\ARMCC\Bin\..\include\stdlib.h
 .\build\pipe.o: ..\..\..\..\components\drivers\include\drivers/serial.h
 .\build\pipe.o: ..\..\..\..\components\drivers\include\drivers/pin.h
 .\build\pipe.o: ..\..\..\..\components\libc\compilers\common\extension\sys/errno.h

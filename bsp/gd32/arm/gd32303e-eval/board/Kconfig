@@ -83,6 +83,21 @@ menu "On-chip Peripheral Drivers"
         default n
         select RT_USING_SPI
         if BSP_USING_SPI
+            config BSP_USING_SPI0
+                bool "Enable SPI0 BUS"
+                default n
+
+            config BSP_SPI0_TX_USING_DMA
+                bool "Enable SPI0 TX DMA"
+                depends on BSP_USING_SPI0
+                default n
+                
+            config BSP_SPI0_RX_USING_DMA
+                bool "Enable SPI0 RX DMA"
+                depends on BSP_USING_SPI0
+                select BSP_SPI0_TX_USING_DMA
+                default n
+				
             config BSP_USING_SPI1
                 bool "Enable SPI1 BUS"
                 default n

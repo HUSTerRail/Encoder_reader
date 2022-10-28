@@ -19,6 +19,8 @@
 .\build\ringbuffer.o: ..\..\..\..\components\drivers\include\ipc/pipe.h
 .\build\ringbuffer.o: ..\..\..\..\components\drivers\include\ipc/poll.h
 .\build\ringbuffer.o: ..\..\..\..\components\drivers\include\ipc/ringblk_buf.h
+.\build\ringbuffer.o: ..\..\..\..\components\drivers\include\drivers/spi.h
+.\build\ringbuffer.o: F:\keil_mdk530\ARM\ARMCC\Bin\..\include\stdlib.h
 .\build\ringbuffer.o: ..\..\..\..\components\drivers\include\drivers/serial.h
 .\build\ringbuffer.o: ..\..\..\..\components\drivers\include\drivers/pin.h
 .\build\ringbuffer.o: F:\keil_mdk530\ARM\ARMCC\Bin\..\include\string.h
