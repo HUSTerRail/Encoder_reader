@@ -23,6 +23,7 @@
 .\build\drv_gpio.o: F:\keil_mdk530\ARM\ARMCC\Bin\..\include\stdlib.h
 .\build\drv_gpio.o: ..\..\..\..\components\drivers\include\drivers/serial.h
 .\build\drv_gpio.o: ..\..\..\..\components\drivers\include\drivers/pin.h
+.\build\drv_gpio.o: ..\..\..\..\components\drivers\include\drivers/can.h
 .\build\drv_gpio.o: ..\..\..\..\include\rthw.h
 .\build\drv_gpio.o: ..\libraries\gd32_drivers\drv_gpio.h
 .\build\drv_gpio.o: board\board.h

@@ -17,6 +17,8 @@
 #define LED_RUN GET_PIN(B, 4)  //runµÆ
 #define LED_ERR GET_PIN(B, 3)  //ERRµÆ
 
+extern int can_sample();
+
 int main(void)
 { 
     int count = 1;
@@ -28,7 +30,7 @@ int main(void)
 	
     /* set LED2 pin mode to output */ 
 	  rt_pin_mode(LED_RUN, PIN_MODE_OUTPUT);
-    rt_pin_mode(LED_ERR, PIN_MODE_OUTPUT);
+    rt_pin_mode(LED_ERR, PIN_MODE_OUTPUT); 
     while (count++)
     {
         rt_pin_write(LED_RUN, PIN_HIGH);

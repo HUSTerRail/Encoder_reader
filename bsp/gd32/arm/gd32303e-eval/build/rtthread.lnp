@@ -1,5 +1,7 @@
 --cpu=Cortex-M4.fp.sp
+".\build\spi_sample.o"
 ".\build\main.o"
+".\build\can_sample.o"
 ".\build\syscall_mem.o"
 ".\build\syscalls.o"
 ".\build\stdlib.o"
@@ -9,6 +11,7 @@
 ".\build\showmem.o"
 ".\build\context_rvds.o"
 ".\build\cpuport.o"
+".\build\can.o"
 ".\build\completion.o"
 ".\build\dataqueue.o"
 ".\build\pipe.o"
@@ -22,6 +25,8 @@
 ".\build\spi_dev.o"
 ".\build\board.o"
 ".\build\startup_gd32f30x_hd.o"
+".\build\drv_can.o"
+".\build\drv_common.o"
 ".\build\drv_gpio.o"
 ".\build\drv_spi.o"
 ".\build\drv_usart.o"
@@ -47,7 +52,9 @@
 ".\build\gd32f30x_exti.o"
 ".\build\gd32f30x_gpio.o"
 ".\build\gd32f30x_misc.o"
+".\build\gd32f30x_dbg.o"
 ".\build\gd32f30x_spi.o"
+".\build\gd32f30x_can.o"
 --strict --scatter ".\build\rtthread.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

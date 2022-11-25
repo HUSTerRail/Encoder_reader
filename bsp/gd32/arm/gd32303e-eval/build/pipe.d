@@ -24,5 +24,6 @@
 .\build\pipe.o: F:\keil_mdk530\ARM\ARMCC\Bin\..\include\stdlib.h
 .\build\pipe.o: ..\..\..\..\components\drivers\include\drivers/serial.h
 .\build\pipe.o: ..\..\..\..\components\drivers\include\drivers/pin.h
+.\build\pipe.o: ..\..\..\..\components\drivers\include\drivers/can.h
 .\build\pipe.o: ..\..\..\..\components\libc\compilers\common\extension\sys/errno.h
 .\build\pipe.o: F:\keil_mdk530\ARM\ARMCC\Bin\..\include\errno.h

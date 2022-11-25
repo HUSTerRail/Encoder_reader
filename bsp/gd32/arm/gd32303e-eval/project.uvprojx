@@ -14,16 +14,16 @@
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
-          <Device>GD32F303ZE</Device>
+          <Device>GD32F303CB</Device>
           <Vendor>GigaDevice</Vendor>
           <PackID>GigaDevice.GD32F30x_DFP.2.2.1</PackID>
           <PackURL>https://gd32mcu.com/data/documents/pack/</PackURL>
-          <Cpu>IRAM(0x20000000,0x010000) IROM(0x08000000,0x080000) CPUTYPE("Cortex-M4") FPU2 CLOCK(8000000) ELITTLE</Cpu>
+          <Cpu>IRAM(0x20000000,0x08000) IROM(0x08000000,0x020000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
-          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC800 -FN1 -FF0GD32F30x_CL -FS08000000 -FL080000 -FP0($$Device:GD32F303ZE$Flash\GD32F30x_HD.FLM))</FlashDriverDll>
+          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0GD32F30x_HD -FS08000000 -FL020000 -FP0($$Device:GD32F303CB$Flash\GD32F30x_HD.FLM))</FlashDriverDll>
           <DeviceId>0</DeviceId>
-          <RegisterFile>$$Device:GD32F303ZE$Device\Include\gd32f30x.h</RegisterFile>
+          <RegisterFile>$$Device:GD32F303CB$Device\Include\gd32f30x.h</RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
@@ -33,7 +33,7 @@
           <SLE66CMisc></SLE66CMisc>
           <SLE66AMisc></SLE66AMisc>
           <SLE66LinkerMisc></SLE66LinkerMisc>
-          <SFDFile>$$Device:GD32F303ZE$SVD\GD32F30x_HD.svd</SFDFile>
+          <SFDFile>$$Device:GD32F303CB$SVD\GD32F30x_HD.svd</SFDFile>
           <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
           <BinPath></BinPath>
@@ -52,9 +52,9 @@
           <OutputName>rtthread</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
-          <CreateHexFile>0</CreateHexFile>
+          <CreateHexFile>1</CreateHexFile>
           <DebugInformation>1</DebugInformation>
-          <BrowseInformation>0</BrowseInformation>
+          <BrowseInformation>1</BrowseInformation>
           <ListingPath>.\build\</ListingPath>
           <HexFormatSelection>1</HexFormatSelection>
           <Merge32K>0</Merge32K>
@@ -246,12 +246,12 @@
               <IRAM>
                 <Type>0</Type>
                 <StartAddress>0x20000000</StartAddress>
-                <Size>0x10000</Size>
+                <Size>0x8000</Size>
               </IRAM>
               <IROM>
                 <Type>1</Type>
                 <StartAddress>0x8000000</StartAddress>
-                <Size>0x80000</Size>
+                <Size>0x20000</Size>
               </IROM>
               <XRAM>
                 <Type>0</Type>
@@ -276,7 +276,7 @@
               <OCR_RVCT4>
                 <Type>1</Type>
                 <StartAddress>0x8000000</StartAddress>
-                <Size>0x40000</Size>
+                <Size>0x20000</Size>
               </OCR_RVCT4>
               <OCR_RVCT5>
                 <Type>1</Type>
@@ -301,7 +301,7 @@
               <OCR_RVCT9>
                 <Type>0</Type>
                 <StartAddress>0x20000000</StartAddress>
-                <Size>0x18000</Size>
+                <Size>0x8000</Size>
               </OCR_RVCT9>
               <OCR_RVCT10>
                 <Type>0</Type>
@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>GD32F30X_HD, USE_STDPERIPH_DRIVER, RT_USING_LIBC, __CLK_TCK=RT_TICK_PER_SECOND, __RTTHREAD__, RT_USING_ARM_LIBC</Define>
               <Undefine></Undefine>
-              <IncludePath>applications;.;..\..\..\..\components\libc\compilers\common;..\..\..\..\components\libc\compilers\common\extension;..\..\..\..\components\libc\compilers\common\extension\fcntl\octal;..\..\..\..\libcpu\arm\common;..\..\..\..\libcpu\arm\cortex-m4;..\..\..\..\components\drivers\include;..\..\..\..\components\drivers\include;..\..\..\..\components\drivers\include;..\..\..\..\components\drivers\spi;..\..\..\..\components\drivers\include;board;..\libraries\gd32_drivers;..\..\..\..\components\finsh;.;..\..\..\..\include;..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include;..\libraries\GD32F30x_Firmware_Library\CMSIS;..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include;..\..\..\..\components\libc\posix\io\poll;..\..\..\..\components\libc\posix\io\stdio;..\..\..\..\components\libc\posix\ipc</IncludePath>
+              <IncludePath>applications;.;..\..\..\..\components\libc\compilers\common;..\..\..\..\components\libc\compilers\common\extension;..\..\..\..\components\libc\compilers\common\extension\fcntl\octal;..\..\..\..\libcpu\arm\common;..\..\..\..\libcpu\arm\cortex-m4;..\..\..\..\components\drivers\include;..\..\..\..\components\drivers\include;..\..\..\..\components\drivers\include;..\..\..\..\components\drivers\include;..\..\..\..\components\drivers\spi;..\..\..\..\components\drivers\include;board;..\libraries\gd32_drivers;..\libraries\gd32_drivers\config;..\..\..\..\components\finsh;.;..\..\..\..\include;..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include;..\libraries\GD32F30x_Firmware_Library\CMSIS;..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include;..\..\..\..\components\libc\posix\io\poll;..\..\..\..\components\libc\posix\io\stdio;..\..\..\..\components\libc\posix\ipc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -384,9 +384,19 @@
           <GroupName>Applications</GroupName>
           <Files>
             <File>
+              <FileName>spi_sample.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>applications\spi_sample.c</FilePath>
+            </File>
+            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>applications\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>can_sample.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>applications\can_sample.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -448,6 +458,11 @@
         <Group>
           <GroupName>DeviceDrivers</GroupName>
           <Files>
+            <File>
+              <FileName>can.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\components\drivers\can\can.c</FilePath>
+            </File>
             <File>
               <FileName>completion.c</FileName>
               <FileType>1</FileType>
@@ -517,6 +532,16 @@
               <FileName>startup_gd32f30x_hd.s</FileName>
               <FileType>2</FileType>
               <FilePath>..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Source\ARM\startup_gd32f30x_hd.s</FilePath>
+            </File>
+            <File>
+              <FileName>drv_can.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\libraries\gd32_drivers\drv_can.c</FilePath>
+            </File>
+            <File>
+              <FileName>drv_common.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\libraries\gd32_drivers\drv_common.c</FilePath>
             </File>
             <File>
               <FileName>drv_gpio.c</FileName>
@@ -659,9 +684,19 @@
               <FilePath>..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Source\gd32f30x_misc.c</FilePath>
             </File>
             <File>
+              <FileName>gd32f30x_dbg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Source\gd32f30x_dbg.c</FilePath>
+            </File>
+            <File>
               <FileName>gd32f30x_spi.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Source\gd32f30x_spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>gd32f30x_can.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Source\gd32f30x_can.c</FilePath>
             </File>
           </Files>
         </Group>

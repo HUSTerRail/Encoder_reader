@@ -24,4 +24,5 @@
 .\build\serial.o: F:\keil_mdk530\ARM\ARMCC\Bin\..\include\stdlib.h
 .\build\serial.o: ..\..\..\..\components\drivers\include\drivers/serial.h
 .\build\serial.o: ..\..\..\..\components\drivers\include\drivers/pin.h
+.\build\serial.o: ..\..\..\..\components\drivers\include\drivers/can.h
 .\build\serial.o: ..\..\..\..\include\rtdbg.h

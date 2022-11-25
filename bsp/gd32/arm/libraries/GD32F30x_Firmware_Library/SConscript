@@ -12,6 +12,7 @@ GD32F30x_standard_peripheral/Source/gd32f30x_gpio.c
 GD32F30x_standard_peripheral/Source/gd32f30x_rcu.c
 GD32F30x_standard_peripheral/Source/gd32f30x_exti.c
 GD32F30x_standard_peripheral/Source/gd32f30x_misc.c
+GD32F30x_standard_peripheral/Source/gd32f30x_dbg.c
 ''')
     
 if GetDepend(['RT_USING_SERIAL']):

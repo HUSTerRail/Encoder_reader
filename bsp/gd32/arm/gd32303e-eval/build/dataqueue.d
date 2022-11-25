@@ -23,4 +23,5 @@
 .\build\dataqueue.o: F:\keil_mdk530\ARM\ARMCC\Bin\..\include\stdlib.h
 .\build\dataqueue.o: ..\..\..\..\components\drivers\include\drivers/serial.h
 .\build\dataqueue.o: ..\..\..\..\components\drivers\include\drivers/pin.h
+.\build\dataqueue.o: ..\..\..\..\components\drivers\include\drivers/can.h
 .\build\dataqueue.o: ..\..\..\..\include\rthw.h

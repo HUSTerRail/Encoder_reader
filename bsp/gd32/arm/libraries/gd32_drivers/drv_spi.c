@@ -352,5 +352,34 @@ int rt_hw_spi_init(void)
 
 INIT_BOARD_EXPORT(rt_hw_spi_init);
 
+rt_err_t rt_spi_device_attach(const char *bus_name, const char *device_name, uint32_t cs_gpiox, uint32_t cs_gpio_pin)
+{
+    RT_ASSERT(bus_name != RT_NULL);
+    RT_ASSERT(device_name != RT_NULL);
+
+    rt_err_t result;
+    static struct rt_spi_device spi_device;
+    static struct gd32_spi_cs spi_cs;
+		spi_cs.GPIOx = cs_gpiox;
+    spi_cs.GPIO_Pin = cs_gpio_pin;
+    /* initialize the cs pin && select the slave*/
+		gpio_init(spi_cs.GPIOx, GPIO_MODE_OUT_PP, GPIO_OSPEED_50MHZ, spi_cs.GPIO_Pin);
+		gpio_bit_set(spi_cs.GPIOx, spi_cs.GPIO_Pin);
+	
+    /* attach the device to spi bus*/
+    result = rt_spi_bus_attach_device(&spi_device, device_name, bus_name, (void*)&spi_cs);
+
+    if (result != RT_EOK)
+    {
+        LOG_E("%s attach to %s faild, %d\n", device_name, bus_name, result);
+    }
+
+    RT_ASSERT(result == RT_EOK);
+
+    LOG_D("%s attach to %s done", device_name, bus_name);
+
+    return result;
+}
+
 #endif /* BSP_USING_SPI0 || BSP_USING_SPI1 || BSP_USING_SPI2 */
 #endif /* RT_USING_SPI */

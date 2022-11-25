@@ -437,7 +437,7 @@ static int gd32_uart_putc(struct rt_serial_device *serial, char ch)
     uart = (struct gd32_uart *)serial->parent.user_data;
 
     usart_data_transmit(uart->uart_periph, ch);
-    while((usart_flag_get(uart->uart_periph, USART_FLAG_TBE) == RESET));
+    while((usart_flag_get(uart->uart_periph, USART_FLAG_TC) == RESET));
 
     return RT_EOK;
 }
@@ -496,7 +496,7 @@ static const struct rt_uart_ops gd32_uart_ops =
   * @param  None
   * @retval None
   */
-int rt_hw_usart_init(void)
+int gd32_hw_usart_init(void)
 {
     struct serial_configure config = RT_SERIAL_CONFIG_DEFAULT;
     int i;
@@ -519,6 +519,6 @@ int rt_hw_usart_init(void)
     return result;
 }
 
-INIT_BOARD_EXPORT(rt_hw_usart_init);
+INIT_BOARD_EXPORT(gd32_hw_usart_init);
 
 #endif

@@ -24,7 +24,7 @@ struct gd32_spi_cs
     uint32_t GPIOx;
     uint32_t GPIO_Pin;
 };
-
+rt_err_t rt_spi_device_attach(const char *bus_name, const char *device_name, uint32_t cs_gpiox, uint32_t cs_gpio_pin);
 /* gd32 spi dirver class */
 struct gd32_spi
 {

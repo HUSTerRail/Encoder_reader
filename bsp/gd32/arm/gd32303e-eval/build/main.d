@@ -24,6 +24,7 @@
 .\build\main.o: F:\keil_mdk530\ARM\ARMCC\Bin\..\include\stdlib.h
 .\build\main.o: ..\..\..\..\components\drivers\include\drivers/serial.h
 .\build\main.o: ..\..\..\..\components\drivers\include\drivers/pin.h
+.\build\main.o: ..\..\..\..\components\drivers\include\drivers/can.h
 .\build\main.o: board\board.h
 .\build\main.o: ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include\gd32f30x.h
 .\build\main.o: ..\libraries\GD32F30x_Firmware_Library\CMSIS\core_cm4.h

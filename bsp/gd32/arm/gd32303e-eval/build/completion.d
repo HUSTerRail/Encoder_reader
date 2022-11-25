@@ -24,3 +24,4 @@
 .\build\completion.o: F:\keil_mdk530\ARM\ARMCC\Bin\..\include\stdlib.h
 .\build\completion.o: ..\..\..\..\components\drivers\include\drivers/serial.h
 .\build\completion.o: ..\..\..\..\components\drivers\include\drivers/pin.h
+.\build\completion.o: ..\..\..\..\components\drivers\include\drivers/can.h

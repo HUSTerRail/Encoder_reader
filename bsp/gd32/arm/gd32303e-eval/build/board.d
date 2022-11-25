@@ -59,3 +59,4 @@
 .\build\board.o: F:\keil_mdk530\ARM\ARMCC\Bin\..\include\stdlib.h
 .\build\board.o: ..\..\..\..\components\drivers\include\drivers/serial.h
 .\build\board.o: ..\..\..\..\components\drivers\include\drivers/pin.h
+.\build\board.o: ..\..\..\..\components\drivers\include\drivers/can.h

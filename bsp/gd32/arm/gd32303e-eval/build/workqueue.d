@@ -24,3 +24,4 @@
 .\build\workqueue.o: F:\keil_mdk530\ARM\ARMCC\Bin\..\include\stdlib.h
 .\build\workqueue.o: ..\..\..\..\components\drivers\include\drivers/serial.h
 .\build\workqueue.o: ..\..\..\..\components\drivers\include\drivers/pin.h
+.\build\workqueue.o: ..\..\..\..\components\drivers\include\drivers/can.h
