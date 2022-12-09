@@ -393,11 +393,6 @@
               <FileType>1</FileType>
               <FilePath>applications\main.c</FilePath>
             </File>
-            <File>
-              <FileName>can_sample.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>applications\can_sample.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
