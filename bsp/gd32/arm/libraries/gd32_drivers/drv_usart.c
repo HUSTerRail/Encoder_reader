@@ -411,7 +411,6 @@ static rt_err_t gd32_uart_control(struct rt_serial_device *serial, int cmd, void
         NVIC_DisableIRQ(uart->irqn);
         /* disable interrupt */
         usart_interrupt_disable(uart->uart_periph, USART_INT_RBNE);
-
         break;
     case RT_DEVICE_CTRL_SET_INT:
         /* enable rx irq */

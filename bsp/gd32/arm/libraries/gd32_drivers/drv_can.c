@@ -25,7 +25,7 @@ struct gd32_baud_rate_tab
 };
 
 /* baud = APB1 / (1 + BS1 + BS2) / PSC */
-//#if defined (SOC_SERIES_GD32F1)     /* APB1 36MHz */
+//#if defined (SOC_SERIES_GD32F3)     /* APB1 36MHz */
 static const struct gd32_baud_rate_tab can_baud_rate_tab[] =
 {
     {CAN1MBaud,   CAN_BT_SJW_2TQ, CAN_BT_BS1_8TQ, CAN_BT_BS2_3TQ, 3},

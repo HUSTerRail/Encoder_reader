@@ -58,7 +58,7 @@ OF SUCH DAMAGE.
 #ifdef GD32F30X_CL
 #define HXTAL_VALUE    ((uint32_t)25000000) /*!< value of the external oscillator in Hz */
 #else
-#define HXTAL_VALUE    ((uint32_t)8000000) /* !< from 4M to 32M *!< value of the external oscillator in Hz*/
+#define HXTAL_VALUE    ((uint32_t)16000000) /* !< from 4M to 32M *!< value of the external oscillator in Hz*/
 #endif /* HXTAL_VALUE */
 #endif /* high speed crystal oscillator value */
 
