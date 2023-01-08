@@ -1,0 +1,12 @@
+.\build\uart_sample.o: applications\uart_sample.c
+.\build\uart_sample.o: ..\..\..\..\include\rtthread.h
+.\build\uart_sample.o: .\rtconfig.h
+.\build\uart_sample.o: ..\..\..\..\include\rtdebug.h
+.\build\uart_sample.o: ..\..\..\..\include\rtdef.h
+.\build\uart_sample.o: F:\keil_mdk530\ARM\ARMCC\Bin\..\include\stdint.h
+.\build\uart_sample.o: F:\keil_mdk530\ARM\ARMCC\Bin\..\include\stddef.h
+.\build\uart_sample.o: F:\keil_mdk530\ARM\ARMCC\Bin\..\include\stdarg.h
+.\build\uart_sample.o: ..\..\..\..\include\rtservice.h
+.\build\uart_sample.o: ..\..\..\..\include\rtm.h
+.\build\uart_sample.o: ..\..\..\..\include\rtthread.h
+.\build\uart_sample.o: ..\..\..\..\components\finsh\finsh.h

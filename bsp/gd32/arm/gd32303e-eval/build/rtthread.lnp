@@ -1,6 +1,7 @@
 --cpu=Cortex-M4.fp.sp
-".\build\spi_sample.o"
 ".\build\main.o"
+".\build\spi_sample.o"
+".\build\uart_sample.o"
 ".\build\syscall_mem.o"
 ".\build\syscalls.o"
 ".\build\stdlib.o"

@@ -600,11 +600,11 @@ void EXTI10_15_IRQHandler(void)
 
 int rt_hw_pin_init(void)
 {
-	
 		//管脚复用时钟使能
 		rcu_periph_clock_enable(RCU_AF);
-//PB4管脚默认是NJTRST，要当GPIO，需要重映射
-		gpio_pin_remap_config(GPIO_SWJ_NONJTRST_REMAP, ENABLE);
+		//PB4管脚默认是NJTRST，要当GPIO，需要重映射
+		gpio_pin_remap_config(GPIO_SWJ_SWDPENABLE_REMAP, ENABLE);	
+
     int result;
 
     result = rt_device_pin_register("pin", &gd32_pin_ops, RT_NULL);

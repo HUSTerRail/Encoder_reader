@@ -384,14 +384,19 @@
           <GroupName>Applications</GroupName>
           <Files>
             <File>
+              <FileName>main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>applications\main.c</FilePath>
+            </File>
+            <File>
               <FileName>spi_sample.c</FileName>
               <FileType>1</FileType>
               <FilePath>applications\spi_sample.c</FilePath>
             </File>
             <File>
-              <FileName>main.c</FileName>
+              <FileName>uart_sample.c</FileName>
               <FileType>1</FileType>
-              <FilePath>applications\main.c</FilePath>
+              <FilePath>applications\uart_sample.c</FilePath>
             </File>
           </Files>
         </Group>
