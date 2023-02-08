@@ -22,23 +22,23 @@ extern int can_sample();
 int main(void)
 { 
     int count = 1;
-		rcu_periph_clock_enable(RCU_GPIOB);
+//		rcu_periph_clock_enable(RCU_GPIOB);
 
-		gpio_init(GPIOB, GPIO_MODE_OUT_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_4);
-	  gpio_bit_reset(GPIOB, GPIO_PIN_4);
+//		gpio_init(GPIOB, GPIO_MODE_OUT_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_4);
+//	  gpio_bit_reset(GPIOB, GPIO_PIN_4);
 	
     /* set LED2 pin mode to output */ 
 	  rt_pin_mode(LED_RUN, PIN_MODE_OUTPUT);
     rt_pin_mode(LED_ERR, PIN_MODE_OUTPUT); 
+		rt_pin_write(LED_ERR, PIN_HIGH);
 //		extern int uart_sample();
 //		uart_sample();
     while (count++)
     {
 				rt_pin_write(LED_RUN, PIN_HIGH);
-			  rt_pin_write(LED_ERR, PIN_LOW);
+//			  rt_pin_write(LED_ERR, PIN_LOW);
         rt_thread_mdelay(1000);
         rt_pin_write(LED_RUN, PIN_LOW);
-				rt_pin_write(LED_ERR, PIN_HIGH);
         rt_thread_mdelay(1000);
     }
 

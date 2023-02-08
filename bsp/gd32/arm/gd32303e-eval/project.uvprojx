@@ -398,6 +398,11 @@
               <FileType>1</FileType>
               <FilePath>applications\uart_sample.c</FilePath>
             </File>
+            <File>
+              <FileName>spi_readSD.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\applications\spi_readSD.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

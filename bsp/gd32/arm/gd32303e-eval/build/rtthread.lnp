@@ -2,6 +2,7 @@
 ".\build\main.o"
 ".\build\spi_sample.o"
 ".\build\uart_sample.o"
+".\build\spi_readsd.o"
 ".\build\syscall_mem.o"
 ".\build\syscalls.o"
 ".\build\stdlib.o"
