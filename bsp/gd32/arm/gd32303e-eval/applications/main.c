@@ -17,8 +17,6 @@
 #define LED_RUN GET_PIN(B, 4)  //runµÆ
 #define LED_ERR GET_PIN(B, 3)  //ERRµÆ
 
-extern int can_sample();
-
 int main(void)
 { 
     int count = 1;

@@ -61,3 +61,4 @@
 .\build\spi_sample.o: ..\libraries\gd32_drivers\drv_usart.h
 .\build\spi_sample.o: board\board.h
 .\build\spi_sample.o: ..\libraries\gd32_drivers\drv_gpio.h
+.\build\spi_sample.o: applications\definitions.h
