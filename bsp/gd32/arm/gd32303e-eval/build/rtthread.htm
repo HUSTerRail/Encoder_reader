@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\build\rtthread.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\build\rtthread.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Sat Apr 08 11:18:33 2023
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Sun Apr 09 22:43:19 2023
 <BR><P>
 <H3>Maximum Stack Usage =        608 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -11,7 +11,7 @@ rt_hw_spi_recv_init_entry &rArr; uart_sample &rArr; rt_thread_create &rArr; rt_o
 <P>
 <H3>
 Mutually Recursive functions
-</H3> <LI><a href="#[ba]">rt_device_write</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[d1]">rt_assert_handler</a><BR>
+</H3> <LI><a href="#[b7]">rt_device_write</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[d1]">rt_assert_handler</a><BR>
  <LI><a href="#[1a0]">rt_object_get_type</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[d1]">rt_assert_handler</a><BR>
  <LI><a href="#[a7]">error_handling</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[a7]">error_handling</a><BR>
  <LI><a href="#[5]">NMI_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[5]">NMI_Handler</a><BR>
@@ -336,7 +336,7 @@ Global Symbols
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;error_handling
 </UL>
 
-<P><STRONG><a name="[a8]"></a>rt_hw_spi_recv_init_entry</STRONG> (Thumb, 1644 bytes, Stack size 184 bytes, spi_sample.o(.text))
+<P><STRONG><a name="[a8]"></a>rt_hw_spi_recv_init_entry</STRONG> (Thumb, 1624 bytes, Stack size 184 bytes, spi_sample.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 608<LI>Call Chain = rt_hw_spi_recv_init_entry &rArr; uart_sample &rArr; rt_thread_create &rArr; rt_object_allocate &rArr; rt_malloc &rArr; _heap_lock &rArr; rt_mutex_take &rArr; rt_thread_control &rArr; rt_thread_startup &rArr; rt_schedule &rArr; rt_schedule_insert_thread &rArr; rt_assert_handler &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number
 </UL>
 <BR>[Calls]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_sample
@@ -348,7 +348,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> spi_sample.o(.text)
 </UL>
-<P><STRONG><a name="[80]"></a>spi_recv_sample</STRONG> (Thumb, 162 bytes, Stack size 24 bytes, spi_sample.o(.text))
+<P><STRONG><a name="[80]"></a>spi_recv_sample</STRONG> (Thumb, 154 bytes, Stack size 24 bytes, spi_sample.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 400<LI>Call Chain = spi_recv_sample &rArr; rt_thread_create &rArr; rt_object_allocate &rArr; rt_malloc &rArr; _heap_lock &rArr; rt_mutex_take &rArr; rt_thread_control &rArr; rt_thread_startup &rArr; rt_schedule &rArr; rt_schedule_insert_thread &rArr; rt_assert_handler &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_thread_startup
@@ -365,9 +365,9 @@ Global Symbols
 <P><STRONG><a name="[aa]"></a>uart_sample</STRONG> (Thumb, 114 bytes, Stack size 48 bytes, uart_sample.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 424<LI>Call Chain = uart_sample &rArr; rt_thread_create &rArr; rt_object_allocate &rArr; rt_malloc &rArr; _heap_lock &rArr; rt_mutex_take &rArr; rt_thread_control &rArr; rt_thread_startup &rArr; rt_schedule &rArr; rt_schedule_insert_thread &rArr; rt_assert_handler &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_set_rx_indicate
-<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_open
-<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_control
+<BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_set_rx_indicate
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_open
+<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_control
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_thread_startup
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_thread_create
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_strncpy
@@ -392,7 +392,7 @@ Global Symbols
 
 <P><STRONG><a name="[bf]"></a>_sys_write</STRONG> (Thumb, 70 bytes, Stack size 16 bytes, syscalls.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_console_get_device
-<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_write
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_write
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_kprintf
 </UL>
 
@@ -732,7 +732,7 @@ Global Symbols
 <P><STRONG><a name="[83]"></a>cmd_canstat</STRONG> (Thumb, 496 bytes, Stack size 72 bytes, can.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 312<LI>Call Chain = cmd_canstat &rArr; rt_device_find &rArr; rt_object_find &rArr; rt_exit_critical &rArr; rt_schedule &rArr; rt_schedule_insert_thread &rArr; rt_assert_handler &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_control
+<BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_control
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_kprintf
 <LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_find
 </UL>
@@ -1617,8 +1617,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_memset
 <LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_assert_handler
-<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_set_rx_indicate
-<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_open
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_set_rx_indicate
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_open
 <LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_close
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_kprintf
 <LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_find
@@ -1993,7 +1993,7 @@ Global Symbols
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_kprintf
 </UL>
 
-<P><STRONG><a name="[b8]"></a>rt_device_open</STRONG> (Thumb, 166 bytes, Stack size 16 bytes, device.o(.text))
+<P><STRONG><a name="[b9]"></a>rt_device_open</STRONG> (Thumb, 166 bytes, Stack size 16 bytes, device.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = rt_device_open &rArr; rt_assert_handler &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_assert_handler
@@ -2028,7 +2028,7 @@ Global Symbols
 <LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;finsh_getchar
 </UL>
 
-<P><STRONG><a name="[ba]"></a>rt_device_write</STRONG> (Thumb, 98 bytes, Stack size 24 bytes, device.o(.text))
+<P><STRONG><a name="[b7]"></a>rt_device_write</STRONG> (Thumb, 98 bytes, Stack size 24 bytes, device.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48 + In Cycle
 <LI>Call Chain = rt_device_write &rArr;  rt_assert_handler (Cycle)
 </UL>
@@ -2042,7 +2042,7 @@ Global Symbols
 <LI><a href="#[1e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_kputs
 </UL>
 
-<P><STRONG><a name="[b7]"></a>rt_device_control</STRONG> (Thumb, 70 bytes, Stack size 16 bytes, device.o(.text))
+<P><STRONG><a name="[b8]"></a>rt_device_control</STRONG> (Thumb, 70 bytes, Stack size 16 bytes, device.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = rt_device_control &rArr; rt_assert_handler &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_assert_handler
@@ -2054,7 +2054,7 @@ Global Symbols
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_sample
 </UL>
 
-<P><STRONG><a name="[b9]"></a>rt_device_set_rx_indicate</STRONG> (Thumb, 52 bytes, Stack size 16 bytes, device.o(.text))
+<P><STRONG><a name="[ba]"></a>rt_device_set_rx_indicate</STRONG> (Thumb, 52 bytes, Stack size 16 bytes, device.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = rt_device_set_rx_indicate &rArr; rt_assert_handler &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_assert_handler
@@ -2678,7 +2678,7 @@ Global Symbols
 <P><STRONG><a name="[b0]"></a>rt_kprintf</STRONG> (Thumb, 56 bytes, Stack size 24 bytes, kservice.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = rt_kprintf &rArr; rt_vsnprintf &rArr; print_number
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_write
+<BR>[Calls]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_write
 <LI><a href="#[1d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_vsnprintf
 <LI><a href="#[1d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_hw_console_output
 </UL>
@@ -2706,7 +2706,7 @@ Global Symbols
 <LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_read
 <LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_close
 <LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_open
-<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_open
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_open
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_sample
 <LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_spi_device_attach
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_sem_take
@@ -2770,7 +2770,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_interrupt_get_nest
 <LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_thread_self
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_write
+<BR>[Called By]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_write
 <LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_read
 <LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_spi_transfer_message
 <LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_spi_take_bus
@@ -2914,11 +2914,11 @@ Global Symbols
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_can_init
 <LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_hw_cpu_shutdown
 <LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_thread_control
-<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_write
-<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_set_rx_indicate
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_write
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_set_rx_indicate
 <LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_read
-<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_open
-<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_control
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_open
+<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_control
 <LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_close
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_thread_startup
 <LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_spi_transfer_message
@@ -3134,7 +3134,7 @@ Global Symbols
 <P><STRONG><a name="[133]"></a>rt_console_set_device</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, kservice.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 256<LI>Call Chain = rt_console_set_device &rArr; rt_device_find &rArr; rt_object_find &rArr; rt_exit_critical &rArr; rt_schedule &rArr; rt_schedule_insert_thread &rArr; rt_assert_handler &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_open
+<BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_open
 <LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_close
 <LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_find
 </UL>
@@ -3143,7 +3143,7 @@ Global Symbols
 
 <P><STRONG><a name="[1e0]"></a>rt_kputs</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, kservice.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_strlen
-<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_write
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_write
 <LI><a href="#[1d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_hw_console_output
 </UL>
 
@@ -3436,11 +3436,11 @@ Global Symbols
 <LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_mutex_take
 <LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_mutex_release
 <LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_thread_control
-<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_write
-<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_set_rx_indicate
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_write
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_set_rx_indicate
 <LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_read
-<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_open
-<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_control
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_open
+<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_control
 <LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_close
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_thread_startup
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_sem_take
@@ -4749,14 +4749,14 @@ Local Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> uart_sample.o(.text)
 </UL>
-<P><STRONG><a name="[4b]"></a>serial_thread_entry</STRONG> (Thumb, 440 bytes, Stack size 32 bytes, uart_sample.o(.text))
+<P><STRONG><a name="[4b]"></a>serial_thread_entry</STRONG> (Thumb, 494 bytes, Stack size 32 bytes, uart_sample.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 288<LI>Call Chain = serial_thread_entry &rArr; rt_sem_take &rArr; _ipc_list_suspend &rArr; rt_thread_suspend &rArr; rt_timer_stop &rArr; rt_assert_handler &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_write
-<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_set_rx_indicate
+<BR>[Calls]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_write
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_set_rx_indicate
 <LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_read
-<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_open
-<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_control
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_open
+<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_control
 <LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_close
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_strncpy
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_sem_take
@@ -4899,7 +4899,7 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = cantimeout &rArr; rt_device_control &rArr; rt_assert_handler &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_assert_handler
-<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_control
+<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_control
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> can.o(.text)
 </UL>

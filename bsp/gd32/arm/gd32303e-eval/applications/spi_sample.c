@@ -14,6 +14,7 @@ int Factory_Position_Offset = 0;   //出厂位置偏移值设置为0，新位置
 extern struct rt_semaphore rx_sem;
 extern struct rt_semaphore tx_sem;
 extern struct rt_semaphore spi_sem;
+struct rt_spi_message msg1,msg2,msg3,msg4;
 
 extern rt_uint8_t CMD;
 extern rt_uint32_t baud_rate;
@@ -47,8 +48,121 @@ void error_handling(void){   //寄存器或传感器数据的读取出现了问�
 	}
 }
 
+//写寄存器的值
+void Write_Register(rt_uint8_t ADDR,rt_uint8_t data){
+		rt_uint8_t params_set_send1 = 0xD2, params_set_send2 = ADDR,params_set_send3 = data,    //params_set_send1对应read_register op_code
+							 params_set_send4 = 0xad,params_set_send5 = 0x00,params_set_send6 = 0x00;     //params_set_send4对应register_status op_code
+		rt_uint8_t params_set_recv1 = 0x00,params_set_recv2 = 0x00,params_set_recv3 = 0x00,     
+							 params_set_recv4 = 0x00,params_set_recv5 = 0x00,params_set_recv6 = 0x00;	    //params_set_recv5对应status
+		params_set_recv5 = 0xff;
+		while(params_set_recv5 & 0x04) //FAIL，读取数据失败则一直读取（对应STATUS第3位）
+		{
+			//写寄存器
+			msg1.send_buf   = &params_set_send1;
+			msg1.recv_buf   = &params_set_recv1;
+			msg1.length     = 1;
+			msg1.cs_take    = 1;
+			msg1.cs_release = 0;
+			msg1.next       = &msg2;
+			msg2.send_buf   = &params_set_send2;
+			msg2.recv_buf   = &params_set_recv2;
+			msg2.length     = 1;
+			msg2.cs_take    = 1;
+			msg2.cs_release = 0;
+			msg2.next       = &msg3;
+			msg3.send_buf   = &params_set_send3;
+			msg3.recv_buf   = &params_set_recv3;
+			msg3.length     = 1;
+			msg3.cs_take    = 0;
+			msg3.cs_release = 1; 
+			msg3.next       = RT_NULL;
+			rt_spi_transfer_message(spi_dev_recv, &msg1);	
+		while(params_set_recv5 & 0x2){  //busy标志位判断
+			//读状态位/数据位
+			msg1.send_buf   = &params_set_send4;
+			msg1.recv_buf   = &params_set_recv4;
+			msg1.length     = 1;
+			msg1.cs_take    = 1;
+			msg1.cs_release = 0;
+			msg1.next       = &msg2;
+			msg2.send_buf   = &params_set_send5;
+			msg2.recv_buf   = &params_set_recv5;
+			msg2.length     = 1;
+			msg2.cs_take    = 1;
+			msg2.cs_release = 0;
+			msg2.next       = &msg3;
+			msg3.send_buf   = &params_set_send6;
+			msg3.recv_buf   = &params_set_recv6;
+			msg3.length     = 1;
+			msg3.cs_take    = 0;
+			msg3.cs_release = 1;
+			msg3.next       = RT_NULL;
+			rt_spi_transfer_message(spi_dev_recv, &msg1);	
+		}
+		if(params_set_recv5 & 0x1) //数据是否有效
+			break;					
+		}
+	if(params_set_recv5 & 0x88)  //DISMISS,ERROR，发生错误
+		error_handling();	
+}
+
+//读寄存器的值
+rt_uint8_t Read_Register(rt_uint8_t ADDR){
+		rt_uint8_t a1 = 0x97,a2 = ADDR,a3 = 0xad,a4 = 0x00,a5 = 0x00;  //a1对应read_register op_code,a3对应register_status op_code,
+		rt_uint8_t b1 = 0x00,b2 = 0x00,b3 = 0x00,b4 = 0x00,b5 = 0x00;  //b4对应status,b5对应寄存器data	
+		b4 = 0xff;
+		while(b4 & 0x04)  //FAIL，读取数据失败则一直读取（对应STATUS第3位）
+		{
+			//读寄存器
+			msg1.send_buf   = &a1;
+			msg1.recv_buf   = &b1;
+			msg1.length     = 1;
+			msg1.cs_take    = 1;
+			msg1.cs_release = 0;
+			msg1.next       = &msg2;
+			msg2.send_buf   = &a2;
+			msg2.recv_buf   = &b2;
+			msg2.length     = 1;
+			msg2.cs_take    = 0;
+			msg2.cs_release = 1;
+			msg2.next       = RT_NULL;
+			rt_spi_transfer_message(spi_dev_recv, &msg1);
+			while(b4 & 0x2){  //busy标志位判断
+				msg1.send_buf   = &a3;
+				msg1.recv_buf   = &b3;
+				msg1.length     = 1;
+				msg1.cs_take    = 1;
+				msg1.cs_release = 0;
+				msg1.next       = &msg2;
+				msg2.send_buf   = &a4;
+				msg2.recv_buf   = &b4;
+				msg2.length     = 1;
+				msg2.cs_take    = 1;
+				msg2.cs_release = 0;
+				msg2.next       = &msg3;
+				msg3.send_buf   = &a5;
+				msg3.recv_buf   = &b5;
+				msg3.length     = 1;
+				msg3.cs_take    = 0;
+				msg3.cs_release = 1;
+				msg3.next       = RT_NULL;
+				rt_spi_transfer_message(spi_dev_recv, &msg1);	
+			}
+		if(b4 & 0x1) //数据是否有效
+			break;
+	}
+		if(b4 & 0x1) //数据是否有效
+		{
+			return b5;
+		}
+		else if(b4 & 0x88)  //DISMISS,ERROR，发生错误
+			error_handling();		
+}
+
+//读取位置
+
+
 void rt_hw_spi_recv_init_entry(void *parameter){
-		struct rt_spi_message msg1,msg2,msg3,msg4;
 		//激活寄存器(RACTIVE)和传感器(PACTIVE) (OPCODE为0XB0)
 		msg1.send_buf   = &send1_1;
 		msg1.recv_buf   = &recv1_1;
@@ -62,16 +176,15 @@ void rt_hw_spi_recv_init_entry(void *parameter){
 		msg2.cs_take    = 0;
 		msg2.cs_release = 1;
 		msg2.next       = RT_NULL;
-		rt_spi_transfer_message(spi_dev_recv, &msg1);
-//		rt_kprintf("opcode1_1 is 0x%x\n",recv1_1);
-//		rt_kprintf("opcode1_2 is 0x%x\n",recv1_2);		
+		rt_spi_transfer_message(spi_dev_recv, &msg1);	
 		//刚开机时需从EEPROM读取位置偏移量（设置寄存器地址为：0x19(b31~b24),0x1A（b23 ~b16）,0x1B（b15 ~b8）,0X1C（b7 ~b0））
-	  //读寄存器
 		rt_uint8_t a1 = 0x97,a2 = 0x19,a3 = 0xad,a4 = 0x00,a5 = 0x00;
 		rt_uint8_t b1 = 0x00,b2 = 0x00,b3 = 0x00,b4 = 0xFF,b5 = 0x00;  //b4对应status,b5对应寄存器data
 		for(int i = 0;i < 4;i++){
+			b4 = 0xff;
 			while(b4 & 0x04)  //FAIL，读取数据失败则一直读取（对应STATUS第3位）
 			{
+				//读寄存器
 				msg1.send_buf   = &a1;
 				msg1.recv_buf   = &b1;
 				msg1.length     = 1;
@@ -118,9 +231,9 @@ void rt_hw_spi_recv_init_entry(void *parameter){
 			a2++;
 		}
 		//刚开机时需从EEPROM读取波特率(设置寄存器地址为：0x26(b31~b24),0x27（b23 ~b16）,0x28（b15 ~b8）,0X29（b7 ~b0）)
-		b4 = 0xff;
 		a2 = 0x26;
 		for(int i = 0;i < 4;i++){
+			b4 = 0xff;
 			while(b4 & 0x04)  //FAIL，读取数据失败则一直读取（对应STATUS第3位）
 			{
 				//读寄存器
@@ -186,7 +299,7 @@ void rt_hw_spi_recv_init_entry(void *parameter){
 				rt_uint8_t params_set_send1 = 0xD2, params_set_send2 = 0x19,params_set_send3 = 0x00,
 									 params_set_send4 = 0xad,params_set_send5 = 0x00,params_set_send6 = 0x00;
 				rt_uint8_t params_set_recv1 = 0x00,params_set_recv2 = 0x00,params_set_recv3 = 0x00,
-									 params_set_recv4 = 0xad,params_set_recv5 = 0xFF,params_set_recv6 = 0x00;
+									 params_set_recv4 = 0x00,params_set_recv5 = 0xFF,params_set_recv6 = 0x00;
 				rt_uint8_t position[4] = {0,0,0,0};
 				position[0] = (position_offset & 0xff000000)>>24;
 				position[1] = (position_offset & 0x00ff0000)>>16;
@@ -194,6 +307,7 @@ void rt_hw_spi_recv_init_entry(void *parameter){
 				position[3] = (position_offset & 0x000000ff);
 				for(int i = 0;i < 4;i++){  //先写位置偏移值
 					params_set_send3 = position[i];
+					params_set_recv5 = 0xff;
 					while(params_set_recv5 & 0x04) //FAIL，读取数据失败则一直读取（对应STATUS第3位）
 					{
 						//写寄存器
@@ -254,6 +368,7 @@ void rt_hw_spi_recv_init_entry(void *parameter){
 				params_set_send2 = 0x26;
 				for(int i = 0;i < 4;i++){  //先写位置偏移值
 					params_set_send3 = baud[i];
+					params_set_recv5 = 0xff;
 					while(params_set_recv5 & 0x04) //FAIL，读取数据失败则一直读取（对应STATUS第3位）
 					{
 						//写寄存器
@@ -327,6 +442,7 @@ void rt_hw_spi_recv_init_entry(void *parameter){
 					rt_spi_transfer_message(spi_dev_recv, &msg1);
 				}
 				//读取SD-data
+				recv4_2 = 0XFF;
 				while(recv4_2 & 0x04)  //FAIL，读取数据失败则一直读取（对应STATUS第3位）
 				{
 					msg1.send_buf   = &send3_1;
@@ -399,6 +515,12 @@ void rt_hw_spi_recv_init_entry(void *parameter){
 					Position_EW[1] = (recv3_3<<5) + (recv3_4 >>3);
 					Position_EW[2] = (recv3_4<<5) + 0x01;  //低两位为1代表错误位为0，警告位为1（错误位和警告位低电平有效）	
 				}
+				else
+				{
+					Position_EW[0] = (recv3_2<<5) + (recv3_3 >>3);
+					Position_EW[1] = (recv3_3<<5) + (recv3_4 >>3);
+					Position_EW[2] = (recv3_4<<5) + 0x03;  //低两位为1代表错误位为1，警告位为1（错误位和警告位低电平有效）
+				}					
 			}
 			rt_sem_release(&tx_sem);
 		}
@@ -551,10 +673,9 @@ void rt_hw_spi_recv_init_entry(void *parameter){
 ////			}
 ////		}
 }
-int spi_recv_sample(void){
+void spi_recv_sample(void){
 		rt_thread_t tid_recv;
 		rt_err_t res;
-		rt_err_t ret = RT_EOK;
 	  /* 初始化信号量 */
     rt_sem_init(&rx_sem, "rx_sem", 0, RT_IPC_FLAG_FIFO);
 		rt_sem_init(&tx_sem, "tx_sem", 0, RT_IPC_FLAG_FIFO);
@@ -587,8 +708,5 @@ int spi_recv_sample(void){
 		tid_recv = rt_thread_create("co_cfg", rt_hw_spi_recv_init_entry, RT_NULL, 1024, 21, 10); 
 		if (tid_recv != RT_NULL)        
 			rt_thread_startup(tid_recv);
-		else 
-			ret = RT_ERROR;
-		return ret;
 }
 INIT_APP_EXPORT(spi_recv_sample);

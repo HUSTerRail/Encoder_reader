@@ -3,7 +3,7 @@ CompilerVersion: 5060750::V5.06 update 6 (build 750)::.\ARMCC
 F (applications\main.c)(0x6430C46B)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\main.o --omf_browse .\build\main.crf --depend .\build\main.d)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdio.h)(0x5E53505C)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -60,9 +60,9 @@ I (..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include\g
 I (..\libraries\gd32_drivers\drv_usart.h)(0x623D7789)
 I (..\..\..\..\include\rthw.h)(0x62B99693)
 I (..\libraries\gd32_drivers\drv_gpio.h)(0x623D7789)
-F (applications\spi_sample.c)(0x6430DD07)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\spi_sample.o --omf_browse .\build\spi_sample.crf --depend .\build\spi_sample.d)
+F (applications\spi_sample.c)(0x6432CF06)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\spi_sample.o --omf_browse .\build\spi_sample.crf --depend .\build\spi_sample.d)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -121,9 +121,9 @@ I (..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include\g
 I (..\libraries\gd32_drivers\drv_usart.h)(0x623D7789)
 I (..\libraries\gd32_drivers\drv_gpio.h)(0x623D7789)
 I (applications\definitions.h)(0x6430DC57)
-F (applications\uart_sample.c)(0x6430DBCC)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\uart_sample.o --omf_browse .\build\uart_sample.crf --depend .\build\uart_sample.d)
+F (applications\uart_sample.c)(0x6432C84F)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\uart_sample.o --omf_browse .\build\uart_sample.crf --depend .\build\uart_sample.d)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -150,7 +150,7 @@ I (applications\definitions.h)(0x6430DC57)
 F (.\applications\spi_readSD.c)(0x6430C46B)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\spi_readsd.o --omf_browse .\build\spi_readsd.crf --depend .\build\spi_readsd.d)
 F (..\..\..\..\components\libc\compilers\armlibc\syscall_mem.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\syscall_mem.o --omf_browse .\build\syscall_mem.crf --depend .\build\syscall_mem.d)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -162,7 +162,7 @@ I (..\..\..\..\components\finsh\finsh.h)(0x62B99693)
 F (..\..\..\..\components\libc\compilers\armlibc\syscalls.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\syscalls.o --omf_browse .\build\syscalls.crf --depend .\build\syscalls.d)
 I (F:\keil_mdk530\ARM\ARMCC\include\rt_sys.h)(0x5E53505C)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -183,7 +183,7 @@ I (..\..\..\..\components\libc\compilers\common\compiler_private.h)(0x62B99693)
 I (..\..\..\..\include\rtdbg.h)(0x62B99693)
 F (..\..\..\..\components\libc\compilers\common\stdlib.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\stdlib.o --omf_browse .\build\stdlib.crf --depend .\build\stdlib.d)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -195,7 +195,7 @@ I (..\..\..\..\components\finsh\finsh.h)(0x62B99693)
 I (..\..\..\..\include\rtdbg.h)(0x62B99693)
 F (..\..\..\..\components\libc\compilers\common\time.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\time.o --omf_browse .\build\time.crf --depend .\build\time.d)
 I (..\..\..\..\components\libc\compilers\common\sys/time.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\components\libc\compilers\common\extension\sys/types.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
 I (F:\keil_mdk530\ARM\ARMCC\include\stddef.h)(0x5E53505C)
@@ -215,7 +215,7 @@ I (..\..\..\..\components\libc\compilers\common\sys/unistd.h)(0x62B99693)
 I (..\..\..\..\include\rtdbg.h)(0x62B99693)
 F (..\..\..\..\libcpu\arm\common\backtrace.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\backtrace.o --omf_browse .\build\backtrace.crf --depend .\build\backtrace.d)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -227,7 +227,7 @@ I (..\..\..\..\components\finsh\finsh.h)(0x62B99693)
 F (..\..\..\..\libcpu\arm\common\div0.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\div0.o --omf_browse .\build\div0.crf --depend .\build\div0.d)
 F (..\..\..\..\libcpu\arm\common\showmem.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\showmem.o --omf_browse .\build\showmem.crf --depend .\build\showmem.d)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -239,7 +239,7 @@ I (..\..\..\..\components\finsh\finsh.h)(0x62B99693)
 F (..\..\..\..\libcpu\arm\cortex-m4\context_rvds.S)(0x62B99693)(--cpu Cortex-M4.fp.sp -g --apcs=interwork -I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include--pd "__UVISION_VERSION SETA 530" --pd "_RTE_ SETA 1" --pd "GD32F30X_HD SETA 1" --pd "_RTE_ SETA 1"--list .\build\context_rvds.lst --xref -o .\build\context_rvds.o --depend .\build\context_rvds.d)
 F (..\..\..\..\libcpu\arm\cortex-m4\cpuport.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\cpuport.o --omf_browse .\build\cpuport.crf --depend .\build\cpuport.d)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -251,7 +251,7 @@ I (..\..\..\..\components\finsh\finsh.h)(0x62B99693)
 F (..\..\..\..\components\drivers\can\can.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\can.o --omf_browse .\build\can.crf --depend .\build\can.d)
 I (..\..\..\..\include\rthw.h)(0x62B99693)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -277,7 +277,7 @@ I (..\..\..\..\components\drivers\include\drivers/can.h)(0x62B99693)
 F (..\..\..\..\components\drivers\ipc\completion.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\completion.o --omf_browse .\build\completion.crf --depend .\build\completion.d)
 I (..\..\..\..\include\rthw.h)(0x62B99693)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -302,7 +302,7 @@ I (..\..\..\..\components\drivers\include\drivers/pin.h)(0x62B99693)
 I (..\..\..\..\components\drivers\include\drivers/can.h)(0x62B99693)
 F (..\..\..\..\components\drivers\ipc\dataqueue.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\dataqueue.o --omf_browse .\build\dataqueue.crf --depend .\build\dataqueue.d)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -329,7 +329,7 @@ I (..\..\..\..\include\rthw.h)(0x62B99693)
 F (..\..\..\..\components\drivers\ipc\pipe.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\pipe.o --omf_browse .\build\pipe.crf --depend .\build\pipe.d)
 I (..\..\..\..\include\rthw.h)(0x62B99693)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -357,7 +357,7 @@ I (F:\keil_mdk530\ARM\ARMCC\include\errno.h)(0x5E53505C)
 F (..\..\..\..\components\drivers\ipc\ringblk_buf.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\ringblk_buf.o --omf_browse .\build\ringblk_buf.crf --depend .\build\ringblk_buf.d)
 I (..\..\..\..\include\rthw.h)(0x62B99693)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -382,7 +382,7 @@ I (..\..\..\..\components\drivers\include\drivers/pin.h)(0x62B99693)
 I (..\..\..\..\components\drivers\include\drivers/can.h)(0x62B99693)
 F (..\..\..\..\components\drivers\ipc\ringbuffer.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\ringbuffer.o --omf_browse .\build\ringbuffer.crf --depend .\build\ringbuffer.d)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -410,7 +410,7 @@ F (..\..\..\..\components\drivers\ipc\waitqueue.c)(0x62B99693)(--c99 -c --cpu Co
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
 I (..\..\..\..\include\rthw.h)(0x62B99693)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stddef.h)(0x5E53505C)
@@ -435,7 +435,7 @@ I (..\..\..\..\components\drivers\include\drivers/can.h)(0x62B99693)
 F (..\..\..\..\components\drivers\ipc\workqueue.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\workqueue.o --omf_browse .\build\workqueue.crf --depend .\build\workqueue.d)
 I (..\..\..\..\include\rthw.h)(0x62B99693)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -461,7 +461,7 @@ I (..\..\..\..\components\drivers\include\drivers/can.h)(0x62B99693)
 F (..\..\..\..\components\drivers\misc\pin.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\pin.o --omf_browse .\build\pin.crf --depend .\build\pin.d)
 I (..\..\..\..\components\drivers\include\drivers/pin.h)(0x62B99693)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -473,7 +473,7 @@ I (..\..\..\..\components\finsh\finsh.h)(0x62B99693)
 F (..\..\..\..\components\drivers\serial\serial.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\serial.o --omf_browse .\build\serial.crf --depend .\build\serial.d)
 I (..\..\..\..\include\rthw.h)(0x62B99693)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -501,7 +501,7 @@ F (..\..\..\..\components\drivers\spi\spi_core.c)(0x62B99693)(--c99 -c --cpu Cor
 I (..\..\..\..\components\drivers\include\drivers/spi.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdlib.h)(0x5E53505C)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -512,7 +512,7 @@ I (..\..\..\..\include\rtm.h)(0x62B99693)
 I (..\..\..\..\components\finsh\finsh.h)(0x62B99693)
 F (..\..\..\..\components\drivers\spi\spi_dev.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\spi_dev.o --omf_browse .\build\spi_dev.crf --depend .\build\spi_dev.d)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -527,7 +527,7 @@ F (board\board.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=inter
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
 I (..\..\..\..\include\rthw.h)(0x62B99693)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stddef.h)(0x5E53505C)
@@ -620,7 +620,7 @@ I (..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include\g
 I (..\libraries\gd32_drivers\drv_usart.h)(0x623D7789)
 I (..\..\..\..\include\rthw.h)(0x62B99693)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stddef.h)(0x5E53505C)
@@ -648,7 +648,7 @@ I (..\..\..\..\include\rtdbg.h)(0x62B99693)
 F (..\libraries\gd32_drivers\drv_common.c)(0x636C5CD2)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\drv_common.o --omf_browse .\build\drv_common.crf --depend .\build\drv_common.d)
 I (..\libraries\gd32_drivers\drv_common.h)(0x623D7789)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -708,7 +708,7 @@ I (..\libraries\gd32_drivers\drv_gpio.h)(0x623D7789)
 F (..\libraries\gd32_drivers\drv_gpio.c)(0x63BABEF9)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\drv_gpio.o --omf_browse .\build\drv_gpio.crf --depend .\build\drv_gpio.d)
 I (..\..\..\..\components\drivers\include\rtdevice.h)(0x62B99693)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -768,7 +768,7 @@ F (..\libraries\gd32_drivers\drv_spi.c)(0x6380CFE9)(--c99 -c --cpu Cortex-M4.fp.
 I (..\libraries\gd32_drivers\drv_spi.h)(0x6380D006)
 I (..\..\..\..\include\rthw.h)(0x62B99693)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -829,7 +829,7 @@ F (..\libraries\gd32_drivers\drv_usart.c)(0x639335B9)(--c99 -c --cpu Cortex-M4.f
 I (..\libraries\gd32_drivers\drv_usart.h)(0x623D7789)
 I (..\..\..\..\include\rthw.h)(0x62B99693)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -887,7 +887,7 @@ I (..\..\..\..\components\drivers\include\drivers/can.h)(0x62B99693)
 F (..\..\..\..\components\finsh\shell.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\shell.o --omf_browse .\build\shell.crf --depend .\build\shell.d)
 I (..\..\..\..\include\rthw.h)(0x62B99693)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -902,7 +902,7 @@ I (..\..\..\..\components\finsh\shell.h)(0x62B99693)
 I (..\..\..\..\components\finsh\msh.h)(0x62B99693)
 F (..\..\..\..\components\finsh\msh.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\msh.o --omf_browse .\build\msh.crf --depend .\build\msh.d)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -917,7 +917,7 @@ I (..\..\..\..\components\finsh\shell.h)(0x62B99693)
 F (..\..\..\..\components\finsh\cmd.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\cmd.o --omf_browse .\build\cmd.crf --depend .\build\cmd.d)
 I (..\..\..\..\include\rthw.h)(0x62B99693)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -930,7 +930,7 @@ I (F:\keil_mdk530\ARM\ARMCC\include\string.h)(0x6385D212)
 F (..\..\..\..\src\clock.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\clock.o --omf_browse .\build\clock.crf --depend .\build\clock.d)
 I (..\..\..\..\include\rthw.h)(0x62B99693)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -942,7 +942,7 @@ I (..\..\..\..\components\finsh\finsh.h)(0x62B99693)
 F (..\..\..\..\src\components.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\components.o --omf_browse .\build\components.crf --depend .\build\components.d)
 I (..\..\..\..\include\rthw.h)(0x62B99693)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -953,7 +953,7 @@ I (..\..\..\..\include\rtm.h)(0x62B99693)
 I (..\..\..\..\components\finsh\finsh.h)(0x62B99693)
 F (..\..\..\..\src\device.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\device.o --omf_browse .\build\device.crf --depend .\build\device.d)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -965,7 +965,7 @@ I (..\..\..\..\components\finsh\finsh.h)(0x62B99693)
 F (..\..\..\..\src\idle.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\idle.o --omf_browse .\build\idle.crf --depend .\build\idle.d)
 I (..\..\..\..\include\rthw.h)(0x62B99693)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -976,7 +976,7 @@ I (..\..\..\..\include\rtm.h)(0x62B99693)
 I (..\..\..\..\components\finsh\finsh.h)(0x62B99693)
 F (..\..\..\..\src\ipc.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\ipc.o --omf_browse .\build\ipc.crf --depend .\build\ipc.d)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -989,7 +989,7 @@ I (..\..\..\..\include\rthw.h)(0x62B99693)
 F (..\..\..\..\src\irq.c)(0x639334F0)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\irq.o --omf_browse .\build\irq.crf --depend .\build\irq.d)
 I (..\..\..\..\include\rthw.h)(0x62B99693)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -1000,7 +1000,7 @@ I (..\..\..\..\include\rtm.h)(0x62B99693)
 I (..\..\..\..\components\finsh\finsh.h)(0x62B99693)
 F (..\..\..\..\src\kservice.c)(0x6391F3FB)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\kservice.o --omf_browse .\build\kservice.crf --depend .\build\kservice.d)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -1013,7 +1013,7 @@ I (..\..\..\..\include\rthw.h)(0x62B99693)
 F (..\..\..\..\src\mem.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\mem.o --omf_browse .\build\mem.crf --depend .\build\mem.d)
 I (..\..\..\..\include\rthw.h)(0x62B99693)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -1025,7 +1025,7 @@ I (..\..\..\..\components\finsh\finsh.h)(0x62B99693)
 F (..\..\..\..\src\mempool.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\mempool.o --omf_browse .\build\mempool.crf --depend .\build\mempool.d)
 I (..\..\..\..\include\rthw.h)(0x62B99693)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -1036,7 +1036,7 @@ I (..\..\..\..\include\rtm.h)(0x62B99693)
 I (..\..\..\..\components\finsh\finsh.h)(0x62B99693)
 F (..\..\..\..\src\object.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\object.o --omf_browse .\build\object.crf --depend .\build\object.d)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -1048,7 +1048,7 @@ I (..\..\..\..\components\finsh\finsh.h)(0x62B99693)
 I (..\..\..\..\include\rthw.h)(0x62B99693)
 F (..\..\..\..\src\scheduler.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\scheduler.o --omf_browse .\build\scheduler.crf --depend .\build\scheduler.d)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -1061,7 +1061,7 @@ I (..\..\..\..\include\rthw.h)(0x62B99693)
 F (..\..\..\..\src\thread.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\thread.o --omf_browse .\build\thread.crf --depend .\build\thread.d)
 I (..\..\..\..\include\rthw.h)(0x62B99693)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)
@@ -1072,7 +1072,7 @@ I (..\..\..\..\include\rtm.h)(0x62B99693)
 I (..\..\..\..\components\finsh\finsh.h)(0x62B99693)
 F (..\..\..\..\src\timer.c)(0x62B99693)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork -I applications -I . -I ..\..\..\..\components\libc\compilers\common -I ..\..\..\..\components\libc\compilers\common\extension -I ..\..\..\..\components\libc\compilers\common\extension\fcntl\octal -I ..\..\..\..\libcpu\arm\common -I ..\..\..\..\libcpu\arm\cortex-m4 -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\include -I ..\..\..\..\components\drivers\spi -I ..\..\..\..\components\drivers\include -I board -I ..\libraries\gd32_drivers -I ..\libraries\gd32_drivers\config -I ..\..\..\..\components\finsh -I . -I ..\..\..\..\include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS\GD\GD32F30x\Include -I ..\libraries\GD32F30x_Firmware_Library\CMSIS -I ..\libraries\GD32F30x_Firmware_Library\GD32F30x_standard_peripheral\Include -I ..\..\..\..\components\libc\posix\io\poll -I ..\..\..\..\components\libc\posix\io\stdio -I ..\..\..\..\components\libc\posix\ipc-I.\RTE\_rt-thread-IF:\keil_mdk530\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IF:\keil_mdk530\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DGD32F30X_HD -D_RTE_ -DGD32F30X_HD -DUSE_STDPERIPH_DRIVER -DRT_USING_LIBC -D__CLK_TCK="RT_TICK_PER_SECOND" -D__RTTHREAD__ -DRT_USING_ARM_LIBC-o .\build\timer.o --omf_browse .\build\timer.crf --depend .\build\timer.d)
 I (..\..\..\..\include\rtthread.h)(0x62B99693)
-I (.\rtconfig.h)(0x639487E6)
+I (.\rtconfig.h)(0x6432C5B6)
 I (..\..\..\..\include\rtdebug.h)(0x62B99693)
 I (..\..\..\..\include\rtdef.h)(0x62B99693)
 I (F:\keil_mdk530\ARM\ARMCC\include\stdint.h)(0x5E53505C)

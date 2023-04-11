@@ -36,6 +36,8 @@ static rt_err_t uart_input(rt_device_t dev, rt_size_t size)
     return RT_EOK;
 }
 
+
+
 static void serial_thread_entry(void *parameter)
 {
     unsigned char ch;
@@ -50,7 +52,6 @@ static void serial_thread_entry(void *parameter)
             rt_sem_take(&rx_sem, RT_WAITING_FOREVER);
         }
         /* 读取到的数据通过串口错位输出 */
-        ch = ch + 1;
 				if(CMD == 0X5A && size_count > 0){   //位置偏移量的4个字节获取
 					size_count--;
 					position_offset = (position_offset<<8) + ch;
@@ -102,6 +103,16 @@ static void serial_thread_entry(void *parameter)
 						baud_rate = Factory_Baud_Rate;
 						rt_sem_release(&spi_sem);
 						rt_sem_take(&tx_sem, RT_WAITING_FOREVER);
+						//先关闭串口再打开，重新设置波特率
+						char uart_name[RT_NAME_MAX];
+						rt_strncpy(uart_name, SAMPLE_UART_NAME, RT_NAME_MAX);
+						serial = rt_device_find(uart_name);
+						rt_device_close(serial); 
+						struct serial_configure config = RT_SERIAL_CONFIG_DEFAULT; 
+						config.baud_rate = baud_rate; 
+						rt_device_control(serial, RT_DEVICE_CTRL_CONFIG, &config);
+						rt_device_open(serial, RT_DEVICE_FLAG_INT_RX);
+						rt_device_set_rx_indicate(serial, uart_input);							
 					}
 					else if(ch == 0x42)  //波特率设置(后续需要增加4个字节)
 					{
