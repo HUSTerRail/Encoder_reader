@@ -36,13 +36,15 @@ static rt_err_t uart_input(rt_device_t dev, rt_size_t size)
     return RT_EOK;
 }
 
-
-
+//Addr. SER对应串口访问寄存器的ROM地址，ADDR代表串口对应MU150的RAM地址
 static void serial_thread_entry(void *parameter)
 {
     unsigned char ch;
 		static int count = 0;
 		unsigned char obay[5] = {0,0xCD,0XEF,0X89,0XAB};
+		extern rt_uint8_t Read_Register(rt_uint8_t ADDR);
+		extern void Write_Register(rt_uint8_t ADDR,rt_uint8_t data);
+		
     while (1)
     {
         /* 从串口读取一个字节的数据，没有读取到则等待接收信号量 */

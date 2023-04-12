@@ -55,9 +55,9 @@ void Write_Register(rt_uint8_t ADDR,rt_uint8_t data){
 		rt_uint8_t params_set_recv1 = 0x00,params_set_recv2 = 0x00,params_set_recv3 = 0x00,     
 							 params_set_recv4 = 0x00,params_set_recv5 = 0x00,params_set_recv6 = 0x00;	    //params_set_recv5对应status
 		params_set_recv5 = 0xff;
+		int error_count = 0;//写入失败100次直接报警
 		while(params_set_recv5 & 0x04) //FAIL，读取数据失败则一直读取（对应STATUS第3位）
 		{
-			//写寄存器
 			msg1.send_buf   = &params_set_send1;
 			msg1.recv_buf   = &params_set_recv1;
 			msg1.length     = 1;
@@ -100,7 +100,11 @@ void Write_Register(rt_uint8_t ADDR,rt_uint8_t data){
 			rt_spi_transfer_message(spi_dev_recv, &msg1);	
 		}
 		if(params_set_recv5 & 0x1) //数据是否有效
-			break;					
+			break;			
+		else	
+			params_set_recv5 = 0xff;
+		if(error_count++ > 100)
+			error_handling();
 		}
 	if(params_set_recv5 & 0x88)  //DISMISS,ERROR，发生错误
 		error_handling();	
@@ -111,6 +115,7 @@ rt_uint8_t Read_Register(rt_uint8_t ADDR){
 		rt_uint8_t a1 = 0x97,a2 = ADDR,a3 = 0xad,a4 = 0x00,a5 = 0x00;  //a1对应read_register op_code,a3对应register_status op_code,
 		rt_uint8_t b1 = 0x00,b2 = 0x00,b3 = 0x00,b4 = 0x00,b5 = 0x00;  //b4对应status,b5对应寄存器data	
 		b4 = 0xff;
+		int error_count = 0;//读取失败100次直接报警
 		while(b4 & 0x04)  //FAIL，读取数据失败则一直读取（对应STATUS第3位）
 		{
 			//读寄存器
@@ -150,6 +155,11 @@ rt_uint8_t Read_Register(rt_uint8_t ADDR){
 			}
 		if(b4 & 0x1) //数据是否有效
 			break;
+		else
+			b4 = 0xff;
+		rt_thread_mdelay(100);
+		if(error_count++ > 10)
+			error_handling();
 	}
 		if(b4 & 0x1) //数据是否有效
 		{
@@ -157,9 +167,8 @@ rt_uint8_t Read_Register(rt_uint8_t ADDR){
 		}
 		else if(b4 & 0x88)  //DISMISS,ERROR，发生错误
 			error_handling();		
+		return 0;
 }
-
-//读取位置
 
 
 void rt_hw_spi_recv_init_entry(void *parameter){
@@ -177,117 +186,26 @@ void rt_hw_spi_recv_init_entry(void *parameter){
 		msg2.cs_release = 1;
 		msg2.next       = RT_NULL;
 		rt_spi_transfer_message(spi_dev_recv, &msg1);	
-		//刚开机时需从EEPROM读取位置偏移量（设置寄存器地址为：0x19(b31~b24),0x1A（b23 ~b16）,0x1B（b15 ~b8）,0X1C（b7 ~b0））
-		rt_uint8_t a1 = 0x97,a2 = 0x19,a3 = 0xad,a4 = 0x00,a5 = 0x00;
-		rt_uint8_t b1 = 0x00,b2 = 0x00,b3 = 0x00,b4 = 0xFF,b5 = 0x00;  //b4对应status,b5对应寄存器data
+		//将EDS的ROM第二栅区用作于储存位置偏移量和波特率（USER对应的栅区不知为何无法访问）
+		if(Read_Register(0x41) != 2)   
+			Write_Register(0x41,0x02);   //EDSBANK pointer to EDS bank2
+		Write_Register(0x40,0x02);  //取当前ROM中的第二栅区（0x00~0x3F）
+		//刚开机时需从EEPROM读取位置偏移量（设置寄存器地址（对应第二栅区）为：0x00(b31~b24),0x01（b23 ~b16）,0x02（b15 ~b8）,0X03（b7 ~b0））
+		rt_uint8_t position_addr = 0x00;
 		for(int i = 0;i < 4;i++){
-			b4 = 0xff;
-			while(b4 & 0x04)  //FAIL，读取数据失败则一直读取（对应STATUS第3位）
-			{
-				//读寄存器
-				msg1.send_buf   = &a1;
-				msg1.recv_buf   = &b1;
-				msg1.length     = 1;
-				msg1.cs_take    = 1;
-				msg1.cs_release = 0;
-				msg1.next       = &msg2;
-				msg2.send_buf   = &a2;
-				msg2.recv_buf   = &b2;
-				msg2.length     = 1;
-				msg2.cs_take    = 0;
-				msg2.cs_release = 1;
-				msg2.next       = RT_NULL;
-				rt_spi_transfer_message(spi_dev_recv, &msg1);
-				while(b4 & 0x2){  //busy标志位判断
-					msg1.send_buf   = &a3;
-					msg1.recv_buf   = &b3;
-					msg1.length     = 1;
-					msg1.cs_take    = 1;
-					msg1.cs_release = 0;
-					msg1.next       = &msg2;
-					msg2.send_buf   = &a4;
-					msg2.recv_buf   = &b4;
-					msg2.length     = 1;
-					msg2.cs_take    = 1;
-					msg2.cs_release = 0;
-					msg2.next       = &msg3;
-					msg3.send_buf   = &a5;
-					msg3.recv_buf   = &b5;
-					msg3.length     = 1;
-					msg3.cs_take    = 0;
-					msg3.cs_release = 1;
-					msg3.next       = RT_NULL;
-					rt_spi_transfer_message(spi_dev_recv, &msg1);	
-				}
-			if(b4 & 0x1) //数据是否有效
-				break;
+				position_offset = (position_offset<<8) + Read_Register(position_addr + i);
 		}
-			if(b4 & 0x1) //数据是否有效
-			{
-				position_offset = (position_offset<<8) + b5;
-			}
-			else if(b4 & 0x88)  //DISMISS,ERROR，发生错误
-				error_handling();
-			a2++;
-		}
-		//刚开机时需从EEPROM读取波特率(设置寄存器地址为：0x26(b31~b24),0x27（b23 ~b16）,0x28（b15 ~b8）,0X29（b7 ~b0）)
-		a2 = 0x26;
+		//刚开机时需从EEPROM读取波特率(设置寄存器地址为：0x04(b31~b24),0x05（b23 ~b16）,0x06（b15 ~b8）,0X07（b7 ~b0）)
+		rt_uint8_t baud_addr = 0x04;
 		for(int i = 0;i < 4;i++){
-			b4 = 0xff;
-			while(b4 & 0x04)  //FAIL，读取数据失败则一直读取（对应STATUS第3位）
-			{
-				//读寄存器
-				msg1.send_buf   = &a1;
-				msg1.recv_buf   = &b1;
-				msg1.length     = 1;
-				msg1.cs_take    = 1;
-				msg1.cs_release = 0;
-				msg1.next       = &msg2;
-				msg2.send_buf   = &a2;
-				msg2.recv_buf   = &b2;
-				msg2.length     = 1;
-				msg2.cs_take    = 0;
-				msg2.cs_release = 1;
-				msg2.next       = RT_NULL;
-				rt_spi_transfer_message(spi_dev_recv, &msg1);
-				while(b4 & 0x2){  //busy标志位判断
-					//读状态位/数据位
-					msg1.send_buf   = &a3;
-					msg1.recv_buf   = &b3;
-					msg1.length     = 1;
-					msg1.cs_take    = 1;
-					msg1.cs_release = 0;
-					msg1.next       = &msg2;
-					msg2.send_buf   = &a4;
-					msg2.recv_buf   = &b4;
-					msg2.length     = 1;
-					msg2.cs_take    = 1;
-					msg2.cs_release = 0;
-					msg2.next       = &msg3;
-					msg3.send_buf   = &a5;
-					msg3.recv_buf   = &b5;
-					msg3.length     = 1;
-					msg3.cs_take    = 0;
-					msg3.cs_release = 1;
-					msg3.next       = RT_NULL;
-					rt_spi_transfer_message(spi_dev_recv, &msg1);	
-				}
-				if(b4 & 0x1) //数据是否有效
-					break;
-			}
-			if(b4 & 0x1) //数据是否有效
-			{
-				baud_rate = (baud_rate<<8) + b5;
-			}
-			else if(b4 & 0x88)  //DISMISS,ERROR,发生错误
-				error_handling();
-			a2++;
+				baud_rate = (baud_rate<<8) + Read_Register(baud_addr + i);
 		}		
-		if(baud_rate == 0 || baud_rate != 3000000 || baud_rate != 2000000 || baud_rate != 921600 || baud_rate != 460800
-			 || baud_rate != 230400 || baud_rate != 115200 || baud_rate != 57600 || baud_rate != 38400 || baud_rate != 19200
-			 || baud_rate != 9600 || baud_rate != 4800 || baud_rate != 2400){
+		if(baud_rate != 3000000 && baud_rate != 2000000 && baud_rate != 921600 && baud_rate != 460800
+			 && baud_rate != 230400 && baud_rate != 115200 && baud_rate != 57600 && baud_rate != 38400
+			 && baud_rate != 19200 && baud_rate != 9600 && baud_rate != 4800 && baud_rate != 2400){
 			baud_rate = Factory_Baud_Rate; //设置为默认出厂波特率
 		}
+		Write_Register(0x40,0x00);  //结束后继续将栅区设置为0（默认的ROM栅区）
 		uart_sample(baud_rate); //串口初始化函数
 		rt_thread_mdelay(5);
 			
@@ -295,131 +213,22 @@ void rt_hw_spi_recv_init_entry(void *parameter){
 			rt_sem_take(&spi_sem, RT_WAITING_FOREVER);
 			if(CMD == 0X63 || CMD == 0X72)  //配置参数保存或重置为出厂设置
 			{
-				//写寄存器功能
-				rt_uint8_t params_set_send1 = 0xD2, params_set_send2 = 0x19,params_set_send3 = 0x00,
-									 params_set_send4 = 0xad,params_set_send5 = 0x00,params_set_send6 = 0x00;
-				rt_uint8_t params_set_recv1 = 0x00,params_set_recv2 = 0x00,params_set_recv3 = 0x00,
-									 params_set_recv4 = 0x00,params_set_recv5 = 0xFF,params_set_recv6 = 0x00;
 				rt_uint8_t position[4] = {0,0,0,0};
 				position[0] = (position_offset & 0xff000000)>>24;
 				position[1] = (position_offset & 0x00ff0000)>>16;
 				position[2] = (position_offset & 0x0000ff00)>>8;
 				position[3] = (position_offset & 0x000000ff);
-				for(int i = 0;i < 4;i++){  //先写位置偏移值
-					params_set_send3 = position[i];
-					params_set_recv5 = 0xff;
-					while(params_set_recv5 & 0x04) //FAIL，读取数据失败则一直读取（对应STATUS第3位）
-					{
-						//写寄存器
-						msg1.send_buf   = &params_set_send1;
-						msg1.recv_buf   = &params_set_recv1;
-						msg1.length     = 1;
-						msg1.cs_take    = 1;
-						msg1.cs_release = 0;
-						msg1.next       = &msg2;
-						msg2.send_buf   = &params_set_send2;
-						msg2.recv_buf   = &params_set_recv2;
-						msg2.length     = 1;
-						msg2.cs_take    = 1;
-						msg2.cs_release = 0;
-						msg2.next       = &msg3;
-						msg3.send_buf   = &params_set_send3;
-						msg3.recv_buf   = &params_set_recv3;
-						msg3.length     = 1;
-						msg3.cs_take    = 0;
-						msg3.cs_release = 1; 
-						msg3.next       = RT_NULL;
-						rt_spi_transfer_message(spi_dev_recv, &msg1);	
-					while(params_set_recv5 & 0x2){  //busy标志位判断
-						//读状态位/数据位
-						msg1.send_buf   = &params_set_send4;
-						msg1.recv_buf   = &params_set_recv4;
-						msg1.length     = 1;
-						msg1.cs_take    = 1;
-						msg1.cs_release = 0;
-						msg1.next       = &msg2;
-						msg2.send_buf   = &params_set_send5;
-						msg2.recv_buf   = &params_set_recv5;
-						msg2.length     = 1;
-						msg2.cs_take    = 1;
-						msg2.cs_release = 0;
-						msg2.next       = &msg3;
-						msg3.send_buf   = &params_set_send6;
-						msg3.recv_buf   = &params_set_recv6;
-						msg3.length     = 1;
-						msg3.cs_take    = 0;
-						msg3.cs_release = 1;
-						msg3.next       = RT_NULL;
-						rt_spi_transfer_message(spi_dev_recv, &msg1);	
-					}
-					if(params_set_recv5 & 0x1) //数据是否有效
-						break;					
-					}
-				if(params_set_recv5 & 0x88)  //DISMISS,ERROR，发生错误
-					error_handling();
-				params_set_send2++;					
-			}
 				rt_uint8_t baud[4] = {0,0,0,0};
 				baud[0] = (baud_rate & 0xff000000)>>24;
 				baud[1] = (baud_rate & 0x00ff0000)>>16;
 				baud[2] = (baud_rate & 0x0000ff00)>>8;
 				baud[3] = (baud_rate & 0x000000ff);
-				params_set_recv5 = 0xff;
-				params_set_send2 = 0x26;
-				for(int i = 0;i < 4;i++){  //先写位置偏移值
-					params_set_send3 = baud[i];
-					params_set_recv5 = 0xff;
-					while(params_set_recv5 & 0x04) //FAIL，读取数据失败则一直读取（对应STATUS第3位）
-					{
-						//写寄存器
-						msg1.send_buf   = &params_set_send1;
-						msg1.recv_buf   = &params_set_recv1;
-						msg1.length     = 1;
-						msg1.cs_take    = 1;
-						msg1.cs_release = 0;
-						msg1.next       = &msg2;
-						msg2.send_buf   = &params_set_send2;
-						msg2.recv_buf   = &params_set_recv2;
-						msg2.length     = 1;
-						msg2.cs_take    = 1;
-						msg2.cs_release = 0;
-						msg2.next       = &msg3;
-						msg3.send_buf   = &params_set_send3;
-						msg3.recv_buf   = &params_set_recv3;
-						msg3.length     = 1;
-						msg3.cs_take    = 0;
-						msg3.cs_release = 1; 
-						msg3.next       = RT_NULL;
-						rt_spi_transfer_message(spi_dev_recv, &msg1);	
-					while(params_set_recv5 & 0x2){  //busy标志位判断
-						//读状态位/数据位
-						msg1.send_buf   = &params_set_send4;
-						msg1.recv_buf   = &params_set_recv4;
-						msg1.length     = 1;
-						msg1.cs_take    = 1;
-						msg1.cs_release = 0;
-						msg1.next       = &msg2;
-						msg2.send_buf   = &params_set_send5;
-						msg2.recv_buf   = &params_set_recv5;
-						msg2.length     = 1;
-						msg2.cs_take    = 1;
-						msg2.cs_release = 0;
-						msg2.next       = &msg3;
-						msg3.send_buf   = &params_set_send6;
-						msg3.recv_buf   = &params_set_recv6;
-						msg3.length     = 1;
-						msg3.cs_take    = 0;
-						msg3.cs_release = 1;
-						msg3.next       = RT_NULL;
-						rt_spi_transfer_message(spi_dev_recv, &msg1);	
-					}
-					if(params_set_recv5 & 0x1) //数据是否有效
-						break;					
-					}
-				if(params_set_recv5 & 0x88)  //DISMISS,ERROR，发生错误
-					error_handling();
-				params_set_send2++;					
-			}			
+				Write_Register(0x40,0x02);  //取当前ROM中的第二栅区（0x00~0x3F）
+				for(int i = 0;i < 4;i++){  //写位置偏移值和波特率
+					Write_Register(position_addr + i,position[i]);
+					Write_Register(baud_addr + i,baud[i]);
+			}
+				Write_Register(0x40,0x00);  //结束后继续将栅区设置为0（默认的ROM栅区）
 			}
 			else if(CMD == 0X31 || CMD == 0X33)  //返回3bytes (Position + E/W bits)
 			{
@@ -441,7 +250,7 @@ void rt_hw_spi_recv_init_entry(void *parameter){
 					msg2.next       = RT_NULL;
 					rt_spi_transfer_message(spi_dev_recv, &msg1);
 				}
-				//读取SD-data
+				//读取SD-data,SD-data不用判断valid
 				recv4_2 = 0XFF;
 				while(recv4_2 & 0x04)  //FAIL，读取数据失败则一直读取（对应STATUS第3位）
 				{
@@ -487,10 +296,6 @@ void rt_hw_spi_recv_init_entry(void *parameter){
 						msg2.next       = RT_NULL;
 						rt_spi_transfer_message(spi_dev_recv, &msg1);
 					}
-					if((recv4_2 & 0x01) == 1) //VALID,代表读取数据有效
-					{
-						break;  //跳出当前的循环
-					}
 				}
 				//需要将得到的绝对位置减去位置偏移值，即得到当前的位置
 				rt_int32_t absolution_position = ((recv3_2 << 16) | (recv3_3 << 8) | recv3_4)>> 5;
@@ -503,19 +308,13 @@ void rt_hw_spi_recv_init_entry(void *parameter){
 				recv3_2 = ((rt_uint32_t)absolution_position & 0xff0000)>>16;
 				recv3_3 = ((rt_uint32_t)absolution_position & 0xff00)>>8;
 				recv3_4 = (rt_uint32_t)absolution_position & 0xff;
-				if((recv4_2 & 0x01) == 1) //VALID,代表读取数据有效
-				{
-					Position_EW[0] = (recv3_2<<5) + (recv3_3 >>3);
-					Position_EW[1] = (recv3_3<<5) + (recv3_4 >>3);
-					Position_EW[2] = (recv3_4<<5) + 0x03;  //低两位为1代表错误位为1，警告位为1（错误位和警告位低电平有效）
-				}
-				else if(recv4_2 & 0x88)  //DISMISS,ERROR，发生错误
+				if(recv4_2 & 0x80)  //ERROR，发生错误
 				{
 					Position_EW[0] = (recv3_2<<5) + (recv3_3 >>3);
 					Position_EW[1] = (recv3_3<<5) + (recv3_4 >>3);
 					Position_EW[2] = (recv3_4<<5) + 0x01;  //低两位为1代表错误位为0，警告位为1（错误位和警告位低电平有效）	
 				}
-				else
+				else  //没有错误，正常返回数据
 				{
 					Position_EW[0] = (recv3_2<<5) + (recv3_3 >>3);
 					Position_EW[1] = (recv3_3<<5) + (recv3_4 >>3);
@@ -673,9 +472,10 @@ void rt_hw_spi_recv_init_entry(void *parameter){
 ////			}
 ////		}
 }
-void spi_recv_sample(void){
+int spi_recv_sample(void){
 		rt_thread_t tid_recv;
 		rt_err_t res;
+	  rt_err_t ret = RT_EOK;
 	  /* 初始化信号量 */
     rt_sem_init(&rx_sem, "rx_sem", 0, RT_IPC_FLAG_FIFO);
 		rt_sem_init(&tx_sem, "tx_sem", 0, RT_IPC_FLAG_FIFO);
@@ -708,5 +508,8 @@ void spi_recv_sample(void){
 		tid_recv = rt_thread_create("co_cfg", rt_hw_spi_recv_init_entry, RT_NULL, 1024, 21, 10); 
 		if (tid_recv != RT_NULL)        
 			rt_thread_startup(tid_recv);
+		else
+        ret = RT_ERROR;
+    return ret;
 }
 INIT_APP_EXPORT(spi_recv_sample);
